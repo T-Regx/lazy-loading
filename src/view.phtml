@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page with posts</title>
+    <script type="application/javascript" src="script.js"></script>
+</head>
+<body>
+<style>
+    .post {
+        border-bottom: 1px solid gray;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+</style>
+<h2>Here are your posts</h2>
+<div class="posts" data-current-page="0">
+    <?php foreach ($posts as $post): ?>
+        <div class="post">
+            <h4><?php echo htmlEntities($post['title']); ?></h4>
+            <p><?php echo htmlEntities($post['content']); ?></p>
+        </div>
+    <?php endforeach; ?>
+</div>
+<button type="button" id="loadMorePosts">
+    Załaduj więcej
+</button>
+</body>
+</html>
